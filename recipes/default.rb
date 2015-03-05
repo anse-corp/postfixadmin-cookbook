@@ -74,6 +74,10 @@ if %w(localhost 127.0.0.1).include?(node['postfixadmin']['database']['host'])
       client_version '5.6'
       action :install
     end
+    
+    service 'mysql' do
+      action :restart
+    end
 
     mysql_connection_info = {
       host: node['postfixadmin']['database']['host'],
