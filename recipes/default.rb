@@ -71,6 +71,7 @@ if %w(localhost 127.0.0.1).include?(node['postfixadmin']['database']['host'])
   when 'mysql'
 
     mysql2_chef_gem 'default' do
+      client_version '5.6'
       action :install
     end
 
